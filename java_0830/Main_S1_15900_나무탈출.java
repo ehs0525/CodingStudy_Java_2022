@@ -37,7 +37,7 @@ public class Main_S1_15900_³ª¹«Å»Ãâ {
 	}
 
 	public static void getDepthSum(int x, int depth) {
-		if (x > 1 && tree[x].size() == 1) {
+		if (x != 1 && tree[x].size() == 1) {
 			depthSum += depth;
 			return;
 		}
@@ -51,5 +51,4 @@ public class Main_S1_15900_³ª¹«Å»Ãâ {
 			getDepthSum(y, depth + 1);
 		}
 	}
-
 }

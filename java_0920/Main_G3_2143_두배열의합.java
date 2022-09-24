@@ -61,7 +61,6 @@ public class Main_G3_2143_두배열의합 {
 			long a = subASum.get(p1);
 			long b = subBSum.get(p2);
 
-			
 			if (a + b < T) {
 				p1++;
 			} else if (a + b == T) {

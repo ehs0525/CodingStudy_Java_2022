@@ -26,18 +26,18 @@ public class Main_S3_2512_예산 {
 		int s = 1, e = max, result = 0;
 		while (s <= e) {
 			int mid = (s + e) / 2;
-			if (distribute(mid) <= M) {	// 예산이 넉넉할 경우
-				result = mid;	// 최대한 배정했을 때가 정답
+			if (distribute(mid) <= M) { // 예산이 넉넉할 경우
+				result = mid; // 최대한 배정했을 때가 정답
 				s = mid + 1;
-			} else {	// 예산이 부족할 경우
+			} else { // 예산이 부족할 경우
 				e = mid - 1;
 			}
 		}
-		
+
 		System.out.println(result);
 	}
 
-	private static int distribute(int upperLimit) {	// 상한액에 따른 배정액의 합
+	private static int distribute(int upperLimit) { // 상한액에 따른 배정액의 합
 		int sum = 0;
 
 		for (int i = 0; i < N; i++) {

@@ -12,7 +12,7 @@ public class Main_G4_3584_가장가까운공통조상 {
 	static int T, N;
 	static ArrayList<Integer>[] tree;
 	static int[] depth, parent;
-	static boolean[] visited, isRoot;
+	static boolean[] isRoot;
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -28,7 +28,7 @@ public class Main_G4_3584_가장가까운공통조상 {
 			}
 			depth = new int[N + 1];
 			parent = new int[N + 1];
-			visited = new boolean[N + 1];
+//			visited = new boolean[N + 1];
 			isRoot = new boolean[N + 1];
 			Arrays.fill(isRoot, true);
 
@@ -38,7 +38,6 @@ public class Main_G4_3584_가장가까운공통조상 {
 				int B = Integer.parseInt(st.nextToken());
 
 				tree[A].add(B);
-//				tree[B].add(A);
 				isRoot[B] = false;
 			}
 
@@ -55,13 +54,13 @@ public class Main_G4_3584_가장가까운공통조상 {
 			}
 
 			dfs(root, 0);
-			sb.append(ncs(a, b)).append("\n");
+			sb.append(nca(a, b)).append("\n");
 		}
 		
 		System.out.println(sb);
 	}
 
-	private static int ncs(int a, int b) {
+	private static int nca(int a, int b) {
 		while (depth[a] != depth[b]) {
 			if (depth[a] > depth[b]) {
 				a = parent[a];
